@@ -1,13 +1,12 @@
 .App {
 display: flex;
-align-items: center;
-flex-direction: column;
+flex-direction: row;
 }
 html{
   height: 100%;
 }
 body{
-  background-image: linear-gradient(to bottom, #EBC114, #ECEBF2);
+  /* background-image: linear-gradient(to bottom, #EBC114, #ECEBF2); */
   /* background-repeat: no-repeat; */
   height: 100%;
   margin: 0;
@@ -23,6 +22,7 @@ h1{
   align-items: center;
   flex-direction: column;
   margin: 20px 0 auto;
+  width: 80%;
 }
 .display{
   width: 88%;
@@ -43,7 +43,7 @@ flex-wrap: wrap;
   box-shadow:         inset 0 0 10px;
 }
 .displaybox{
-border-radius: 20%;
+border-radius: 5px;
 background-color: white;
 margin-bottom: 12px;
 width: 31%;
@@ -51,11 +51,26 @@ height: 31%;
 display: flex;
 align-items: center;
 flex-direction: column;
+box-shadow: 7px 7px 10px black;
+overflow: hidden;
+}
+.displaybox:hover{
+  transform: translate(7px, 7px);
+  box-shadow: 0 0;
+  border: 2px solid green;
+}
+.controls{
+  width: 20%;
+  padding: 1rem;
+  background: #14161a;
+  color: #fff;
+  position: static;
+  height: 100vh;
 }
 .dishimg{
   width: 100%;
-  border-top-left-radius: 20%;
-  border-top-right-radius: 20%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 
 }
 .imgcrop{
@@ -68,4 +83,35 @@ form{
 }
 p{
   overflow: hidden;
+}
+.bar{
+  /* border: 1px solid green; */
+  width: 70%;
+  height: 3vh;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.dishsub{
+  height: 3.46vh;
+  font-family: 'Merriweather';
+  color: white;
+  background-color: green;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.logoimg{
+  width: 92%;
+  border-radius: 5px;
+  position: relative;
+  bottom: 90px;
+}
+.logodiv{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 16vh;
+}
+.cardtitle{
+  text-align: center;
 }

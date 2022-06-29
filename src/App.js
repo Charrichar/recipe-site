@@ -4,6 +4,7 @@ import axios from 'axios'
 import './App.css';
 
 function App() {
+  const [dishLink, setDishLink] = useState('')
   const [display, setDisplay] = useState([])
   const [newDish, setNewDish] = useState('')
   const [calories, setCalories] = useState(2000)
@@ -27,7 +28,7 @@ function App() {
 
       },
       headers: {
-        'X-RapidAPI-Key': 'cfb65902ecmsh006836ec570b325p1b7a02jsn6bc29e79dde5',
+        'X-RapidAPI-Key': process.env.REACT_APP_API,
         'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
       }
     };
@@ -40,24 +41,32 @@ function App() {
     });
   }
 
+    let windowsFeature = "popup"
 
   return (
+
     <div className="App">
-    <h1>Welcome to Grecipe</h1>
+    <div className="controls">
+    <div className="logodiv">
+    <img className="logoimg" src="spoonaclogo.png" />
+    </div>
     <form onSubmit={handleNewSearchSubmit}>
-    <label for="dishname" className="bar title">Find a dish</label>
     <input onChange={handleNewDishChange} type="text" id="dishname" className="bar barr" name="dishname" />
-    <input type="submit" value="Find dish" />
+    <input type="submit" value="Find dish" className="dishsub" />
     </form>
+    </div>
+
     <div className="container">
 
     <div className="display">
     {display.map((display) => {
-      return <div className='displaybox'>
+      return <div className='displaybox' onClick={
+      (event) => window.open(display.sourceUrl, "chromeWindow", windowsFeature)
+      }>
       <div className='imgcrop'>
       <img className='dishimg' src={`${display.image}`} />
       </div>
-      <h5>{display.title}</h5>
+      <h5 className="cardtitle">{display.title}</h5>
       </div>
     })}
     </div>
