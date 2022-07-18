@@ -1,13 +1,15 @@
-import { useState, useEffect } from 'react'
-import MealList from './components/MealList'
+import { useState } from 'react'
+// import MealList from './components/MealList'
 import axios from 'axios'
 import './App.css';
 
+  // const [dishLink, setDishLink] = useState('')
+    // const [calories, setCalories] = useState(2000)
 function App() {
-  const [dishLink, setDishLink] = useState('')
+
   const [display, setDisplay] = useState([])
   const [newDish, setNewDish] = useState('')
-  const [calories, setCalories] = useState(2000)
+
 
   const handleNewDishChange = (event) => {
     setNewDish(`${event.target.value}`)
@@ -61,10 +63,10 @@ function App() {
     <div className="display">
     {display.map((display) => {
       return <div className='displaybox' onClick={
-      (event) => window.open(display.sourceUrl, "chromeWindow", windowsFeature)
+      (event) => window.open(display.sourceUrl, "_self", windowsFeature)
       }>
       <div className='imgcrop'>
-      <img className='dishimg' src={`${display.image}`} />
+      <img className='dishimg' src={`${display.image}`} alt=''/>
       </div>
       <h5 className="cardtitle">{display.title}</h5>
       </div>
