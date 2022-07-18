@@ -50,7 +50,7 @@ function App() {
     <div className="App">
     <div className="controls">
     <div className="logodiv">
-    <img className="logoimg" src="spoonaclogo.png" />
+    <img className="logoimg" src="spoonaclogo.png" alt=''/>
     </div>
     <form onSubmit={handleNewSearchSubmit}>
     <input onChange={handleNewDishChange} type="text" id="dishname" className="bar barr" name="dishname" />
